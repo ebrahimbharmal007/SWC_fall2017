@@ -1,0 +1,65 @@
+---
+title: "Introduction to R reports"
+author: "Ebrahim Bharmal"
+date: "November 12, 2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Sotware Carpentry 
+
+## KnitR challenge 1
+
+**Life expectancy of Asian countries**
+
+
+
+# Data analysis report
+I analyzed the data from the given file gapminder.txt to find the Life expectancy over the course of time given in the data file for Asian countries
+
+*step 1
+I created a new file called gapminderasia to store my new script
+
+
+```{r load_pkgs, echo=FALSE}
+
+library(ggplot2)
+```
+
+
+```{r lebrahim2}
+gapminder <- read.table("../Data/gapminder.txt", header = TRUE)
+
+```
+
+
+
+```{r ebrahim}
+
+ggplot(gapminder, aes(gdpPercap,lifeExp,color = country)) + 
+  geom_line()+
+  geom_point() +
+   theme(legend.position = "none")+
+  labs(x = "Years", y = "Life Expectancy", title = "Figure 1")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
